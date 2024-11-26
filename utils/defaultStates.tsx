@@ -1,5 +1,12 @@
 const defaultStates = [
   {
+    name: "Paris",
+    country: "FR",
+    state: "Ile-de-France",
+    lat: 48.866667,
+    lon: 2.333333,
+  },
+  {
     name: "Madrid",
     country: "ES",
     state: "Madrid",
@@ -27,13 +34,7 @@ const defaultStates = [
     lat: -33.8688197,
     lon: 151.2092955,
   },
-  {
-    name: "Barcelona",
-    country: "ES",
-    state: "Catalonia",
-    lat: 41.3828939,
-    lon: 2.1774322,
-  },
+
 ];
 
 export default defaultStates;

@@ -108,6 +108,19 @@ body::-webkit-scrollbar-thumb:hover {
   background-image: linear-gradient(to right, #00dfff 0%, #00f9ff 20%, yellow);
 }
 
+.footer {
+  align-items: center;
+  flex-direction: column;
+
+  .text-name {
+    font-size: 1.25rem;
+  }
+
+  .source-code-btn {
+    margin-top: 1rem;
+    font-weight: bolder;
+  }
+}
 
 @media screen and (max-width: 581px) {
   .btn-group {
@@ -127,15 +140,16 @@ body::-webkit-scrollbar-thumb:hover {
 
   .search-btn {
     width: 100%;
+
+    .command {
+      display: none;
+    }
   }
 
   .search-btn button {
     width: 100%;
   }
 
-  .source-code-btn {
-    order: -1;
-  }
 }
 
 @media screen and (max-width: 1010px) {
