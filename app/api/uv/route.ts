@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   try {
-    const searchParams = req.nextUrl.searchParams;
+    const searchUrl = new URL(req.url)
+		const searchParams = searchUrl.searchParams;
 
     const lat = searchParams.get("lat");
     const lon = searchParams.get("lon");

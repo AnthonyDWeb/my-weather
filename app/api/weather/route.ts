@@ -5,7 +5,8 @@ export async function GET(req: NextRequest) {
 	try {
 		const apiKey = process.env.OPENWEATHERMAP_API_KEY;
 
-		const searchParams = req.nextUrl.searchParams;
+		const searchUrl = new URL(req.url)
+		const searchParams = searchUrl.searchParams;
 
 		const lat = searchParams.get("lat");
 		const lon = searchParams.get("lon");
