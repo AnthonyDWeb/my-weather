@@ -16,6 +16,10 @@ import Wind from "@/components/base/Wind/Wind";
 import defaultStates from "@/utils/defaultStates";
 import FiveDayForecast from "@/components/base/FiveDayForecast/FiveDayForecast";
 import { useGlobalContextUpdate } from "@/context/globalContext";
+import ThemeDropdown from "@/components/base/ThemeDropdown/ThemeDropdown";
+import { Button } from "@/components/ui/button";
+import { github } from "@/utils/Icons";
+import router from "next/router";
 
 export default function Home() {
 	const { setActiveCityCoords } = useGlobalContextUpdate();
@@ -61,7 +65,7 @@ export default function Home() {
 									return (
 										<div
 											key={index}
-											className="border rounded-lg cursor-pointer dark:bg-dark-grey shadow-sm dark:shadow-none"
+											className="border rounded-lg cursor-pointer bg-card shadow-sm dark:shadow-none"
 											onClick={() => {
 												getClickedCityCords(state.lat, state.lon);
 											}}
@@ -79,15 +83,22 @@ export default function Home() {
 			<footer className="py-4 flex justify-center pb-8">
 				<p className="footer-text text-sm flex items-center gap-1">
 					Made by
-					<Image src={"/logo-white.svg"} alt="logo" width={20} height={20} />
 					<a
-						href="https://thecodedealer.com"
+						href="https://www.anthony-delforge.fr"
 						target="_blank"
-						className=" text-green-300 font-bold"
+						className=" text-name font-bold"
 					>
 						Arkanya
 					</a>
 				</p>
+				<Button
+					className="source-code-btn flex ml-2 items-center gap-2"
+					onClick={() => {
+						router.push("https://github.com/AnthonyDWeb/my-weather");
+					}}
+				>
+					{github} Source Code
+				</Button>
 			</footer>
 		</main>
 	);

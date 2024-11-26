@@ -16,19 +16,7 @@ function Navbar() {
 			<div className="left"></div>
 			<div className="search-container flex shrink-0 w-full gap-2 sm:w-fit">
 				<SearchDialog />
-
-				<div className="btn-group flex items-center gap-2">
-					<ThemeDropdown />
-
-					<Button
-						className="source-code-btn flex items-center gap-2"
-						onClick={() => {
-							router.push(`${process.env.SOURCE_CODE}`);
-						}}
-					>
-						{github} Source Code
-					</Button>
-				</div>
+				<ThemeDropdown />
 			</div>
 		</div>
 	);
