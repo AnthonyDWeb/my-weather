@@ -3,7 +3,6 @@ import AirPollution from "@/components/base/AirPollution/AirPollution";
 import DailyForecast from "@/components/base/DailyForecast/DailyForecast";
 import FeelsLike from "@/components/base/FeelsLike/FeelsLike";
 import Humidity from "@/components/base/Humidity/Humidity";
-// import Mapbox from "@/components/base/Mapbox/Mapbox";
 import Navbar from "@/components/base/Navbar";
 import Population from "@/components/base/Population/Population";
 import Pressure from "@/components/base/Pressure/Pressure";
