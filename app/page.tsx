@@ -1,8 +1,9 @@
+import dynamic from 'next/dynamic';
 import AirPollution from "@/components/base/AirPollution/AirPollution";
 import DailyForecast from "@/components/base/DailyForecast/DailyForecast";
 import FeelsLike from "@/components/base/FeelsLike/FeelsLike";
 import Humidity from "@/components/base/Humidity/Humidity";
-import Mapbox from "@/components/base/Mapbox/Mapbox";
+// import Mapbox from "@/components/base/Mapbox/Mapbox";
 import Navbar from "@/components/base/Navbar";
 import Population from "@/components/base/Population/Population";
 import Pressure from "@/components/base/Pressure/Pressure";
@@ -14,6 +15,7 @@ import Wind from "@/components/base/Wind/Wind";
 import FiveDayForecast from "@/components/base/FiveDayForecast/FiveDayForecast";
 import Footer from "@/components/base/footer";
 import DefaultStates from "@/components/base/DefaultStates/DefaultStates";
+const Mapbox = dynamic( () => import('@/components/base/Mapbox/Mapbox'), { ssr: false } ); 
 
 export default function Home() {
 	return (
