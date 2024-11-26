@@ -1,4 +1,3 @@
-"use client";
 import AirPollution from "@/components/base/AirPollution/AirPollution";
 import DailyForecast from "@/components/base/DailyForecast/DailyForecast";
 import FeelsLike from "@/components/base/FeelsLike/FeelsLike";
@@ -12,23 +11,11 @@ import Temperature from "@/components/base/Temperature/Temperature";
 import UvIndex from "@/components/base/UvIndex/UvIndex";
 import Visibility from "@/components/base/Visibility/Visibility";
 import Wind from "@/components/base/Wind/Wind";
-import defaultStates from "@/utils/defaultStates";
 import FiveDayForecast from "@/components/base/FiveDayForecast/FiveDayForecast";
-import { useGlobalContextUpdate } from "@/context/globalContext";
 import Footer from "@/components/base/footer";
+import DefaultStates from "@/components/base/DefaultStates/DefaultStates";
 
 export default function Home() {
-	const { setActiveCityCoords } = useGlobalContextUpdate();
-
-	const getClickedCityCords = (lat: number, lon: number) => {
-		setActiveCityCoords([lat, lon]);
-
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
-	};
-
 	return (
 		<main className="mx-[1rem] lg:mx-[2rem] xl:mx-[6rem] 2xl:mx-[16rem] m-auto">
 			<Navbar />
@@ -52,26 +39,7 @@ export default function Home() {
 					</div>
 					<div className="mapbox-con mt-4 flex gap-4">
 						<Mapbox />
-						<div className="states flex flex-col gap-3 flex-1">
-							<h2 className="flex items-center gap-2 font-medium">
-								Top Large Cities
-							</h2>
-							<div className="flex flex-col gap-4">
-								{defaultStates.map((state, index) => {
-									return (
-										<div
-											key={index}
-											className="border rounded-lg cursor-pointer bg-card shadow-sm dark:shadow-none"
-											onClick={() => {
-												getClickedCityCords(state.lat, state.lon);
-											}}
-										>
-											<p className="px-6 py-4">{state.name}</p>
-										</div>
-									);
-								})}
-							</div>
-						</div>
+						<DefaultStates />
 					</div>
 				</div>
 			</div>
